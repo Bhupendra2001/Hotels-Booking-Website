@@ -63,7 +63,7 @@ export const Rooms = () => {
     const getRooms = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3005/api/rooms/hotel/${hotelId}`
+          `https://hotels-booking-website.vercel.app/api/rooms/hotel/${hotelId}`
         );
         setRoom(response.data.data);
       } catch (err) {
@@ -76,7 +76,7 @@ export const Rooms = () => {
   const DeleteBookedRoom = async (e, bookid, roomid) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3005/api/bookrooms/${bookid}/${roomid}/${hotelId}/${currentUser?._id}`,
+        `https://hotels-booking-website.vercel.app/api/bookrooms/${bookid}/${roomid}/${hotelId}/${currentUser?._id}`,
         {
           headers: { Authorization: `Barear  ${currentUser?.Token}` },
         }

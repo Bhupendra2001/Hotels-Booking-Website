@@ -86,7 +86,7 @@ const RoomBookUpdate = () => {
   const [bookedFrom, setBookedFrom] = useState("");
   const [bookedTo, setBookedTo] = useState("");
 
-  // console.log(custName , address , idProof , uid , bookedFrom , bookedTo)
+ 
   const navigate = useNavigate()
   const {hotelId , roomId , bookedId} = useParams()
   const handleSubmit = async (e) => {
@@ -101,7 +101,7 @@ const RoomBookUpdate = () => {
     formData.append("bookedTo" , bookedTo)
    
     try{
-        let response = await axios.put(`http://localhost:3005/api/bookrooms/${bookedId}/${roomId}`,formData , {
+        let response = await axios.put(`https://hotels-booking-website.vercel.app/api/bookrooms/${bookedId}/${roomId}`,formData , {
           headers : {
             "Content-Type": "multipart/form-data",
           }

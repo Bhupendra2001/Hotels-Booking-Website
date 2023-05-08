@@ -88,13 +88,13 @@ export const RoomBook = () => {
   const handleSubmit = async (event)=>{
     event.preventDefault();
     try{
-    let response =  await axios.post(`http://localhost:3005/api/bookrooms/rooms/${roomId}/hotel/${hotelId}/${currentUser?._id}` , booked ,
+    let response =  await axios.post(`https://hotels-booking-website.vercel.app/api/bookrooms/rooms/${roomId}/hotel/${hotelId}/${currentUser?._id}` , booked ,
     {
       headers : {
         'Authorization' : `Barear  ${currentUser?.Token}`
       }
     })
-     console.log(response.data.data)
+    
     if(response) alert("Successfully booked Room")
     navigate(`/rooms/${hotelId}`)
     }catch(err){

@@ -8,7 +8,7 @@ export const AuthContexProvider = ({children})=>{
     const [currentUser , setCurrentUser] = useState(JSON.parse(localStorage.getItem("User") || null))
 
     const loginUser = async(inputs)=>{
-        const res = await axios.post("http://localhost:3005/api/login", inputs)
+        const res = await axios.post("https://hotels-booking-website.vercel.app/api/login", inputs)
       
         setCurrentUser(res.data.data)
     };

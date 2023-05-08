@@ -153,7 +153,7 @@ margin-bottom: 10px;
 export const Hotels = ({ query }) => {
   const [hotels, setHotels] = useState([]);
 
-  console.log(hotels.hotel_img)
+  
   const [showfilter, setShowfilter] = useState(false);
   const [filters, setFilters] = useState({
     star: "5",
@@ -172,7 +172,7 @@ export const Hotels = ({ query }) => {
     let { star, facilities } = filters;
 
     let data = await axios.get(
-      `http://localhost:3005/api/hotels?stars=${parseInt(
+      `https://hotels-booking-website.vercel.app/api/hotels?stars=${parseInt(
         star
       )}&facilities=${facilities}`
     );
@@ -183,7 +183,7 @@ export const Hotels = ({ query }) => {
     const getHotels = () => {
       if (query.length == 0) {
         axios
-          .get("http://localhost:3005/api/hotels")
+          .get("https://hotels-booking-website.vercel.app/api/hotels")
           .then((response) => {
             setHotels(response.data.data);
           })

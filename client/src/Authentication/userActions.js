@@ -11,7 +11,7 @@ import {
   bookingFailure
 } from './userReducer';
 
-const API_BASE_URL = 'http://localhost:3005/api';
+const API_BASE_URL = 'https://hotels-booking-website.vercel.app/api';
 
 export const signup = (user ,nevigate) => {
   return async (dispatch) => {

@@ -59,7 +59,7 @@ export const Navbar = ({ onQuery }) => {
   
   const SearchLocation = function (location) {
     axios
-      .get(`http://localhost:3005/api/hotels`)
+      .get(`https://hotels-booking-website.vercel.app/api/hotels`)
       .then((res) => {
         let filterdata = res.data.data.filter(
           (item) =>
@@ -69,7 +69,7 @@ export const Navbar = ({ onQuery }) => {
         onQuery(filterdata);
       })
       .catch((err) => {
-        console.log(err);
+        alert(err.response.data.message);
       });
   };
 
@@ -82,7 +82,7 @@ export const Navbar = ({ onQuery }) => {
       <Left>
         <Input
           type="text"
-          placeholder="Search hotel"
+          placeholder="Nearest City Hotels"
           onChange={(e) => {
             setSearchLoc(e.target.value);
           }}
